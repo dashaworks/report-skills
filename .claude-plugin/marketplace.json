@@ -1,0 +1,39 @@
+{
+  "name": "report-skills",
+  "owner": {
+    "name": "Dasha Bulaeva",
+    "url": "https://github.com/dashaworks"
+  },
+  "metadata": {
+    "description": "Claude Code and Codex skills for AI reports, decks and client sharing: publish research as live web reports, recurring client reports, view-tracked proposals, responsive slide decks, and a design-polish pass — all via the ReportRoom MCP with view analytics returned to the agent."
+  },
+  "plugins": [
+    {
+      "name": "report-skills",
+      "source": "./",
+      "description": "Bundle of 5 report and deck publishing skills for Claude Code and Codex: report-publisher (research → live tracked report), client-reporter (recurring branded client deliverables), proposal-tracker (view-tracked proposal links), deck-publisher (content → responsive slide deck), report-designer (design-bar polish pass). Powered by the ReportRoom MCP: design system fetch, HTML authoring, lint, one-call publish, view analytics.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Dasha Bulaeva",
+        "url": "https://github.com/dashaworks"
+      },
+      "homepage": "https://github.com/dashaworks/report-skills",
+      "license": "MIT",
+      "keywords": [
+        "reports",
+        "ai-report-generator",
+        "client-reporting",
+        "presentations",
+        "decks",
+        "document-sharing",
+        "claude-skills",
+        "codex-skills",
+        "anthropic",
+        "mcp",
+        "analytics",
+        "agencies"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
