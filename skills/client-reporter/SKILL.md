@@ -16,7 +16,7 @@ Follow the shared flow in the root `SKILL.md`. Client-facing = the approval gate
 
 ## Steps
 
-1. **Gather the reporting frame.** Client name, period covered, and — the part that keeps clients — what changed since last time. If a previous report for this client exists (`list_sites`), read its structure and keep the format consistent month over month; consistency is what makes a report feel like a service.
+1. **Gather the reporting frame.** Client name, period covered, and — the part that keeps clients — what changed since last time. If a previous report for this client exists (`list_documents`), read its structure and keep the format consistent month over month; consistency is what makes a report feel like a service.
 2. **Lead with what the client cares about.** Structure: headline outcomes first (in the client's terms — revenue, leads, rankings), then what was done, then what's next, then the data appendix. Never lead with methodology.
 3. **Every metric gets a comparison.** A number without last period's number is noise. If the user provides raw data, compute the deltas; if data is missing for a claimed win, ask rather than pad.
 4. **Author + lint + approval gate** per the shared flow. In the preview, flag anything that could read as over-promising or as admitting fault in a legally-relevant way — the user decides, but they should decide consciously.

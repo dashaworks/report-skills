@@ -28,7 +28,7 @@ Work through these in order; each is a check, not an automatic rewrite:
 
 ## Steps
 
-1. Get the current document (from the conversation, or `list_sites` → the published page).
+1. Get the current document (from the conversation, or `list_documents` → the published page).
 2. Run the six checks; list what you'll change and why, in one short list — get a nod before a big restyle.
 3. Apply, `lint_document`, show before/after summary, republish on approval (same URL — `publish` replaces).
 

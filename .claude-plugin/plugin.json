@@ -1,6 +1,6 @@
 {
   "name": "report-skills",
-  "description": "5 Claude Code and Codex skills for AI reports, decks and client sharing: report-publisher, client-reporter, proposal-tracker, deck-publisher, report-designer. Publish agent-made content as beautiful live pages via the ReportRoom MCP, with per-viewer analytics reported back.",
+  "description": "5 Claude Code and Codex skills for AI reports, decks and client sharing: report-publisher, client-reporter, proposal-tracker, deck-publisher, report-designer. Publish agent-made content as beautiful live pages via the ReportRoom MCP, with aggregate view analytics reported back.",
   "version": "0.1.0",
   "author": {
     "name": "Dasha Bulaeva",
