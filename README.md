@@ -64,6 +64,8 @@ The skills publish through the **ReportRoom MCP server** — an agent-native pub
 
 No ReportRoom account yet? The skills self-provision one on first use — `create_account` issues an API key right in the conversation; verify your email (one click) and publish. Docs: https://docs.reportroom.io
 
+Live documents count against your plan (free = 10, Pro = 100, Team/Business = unlimited). When you hit the cap, the skills offer to retire an old page to make room or point you to an upgrade — they never silently drop your new one. Team workspaces can also publish team-only pages and serve from a custom domain.
+
 ## Why not just export a PDF?
 
 - **Live pages beat attachments** — responsive, dark-mode, always the latest version, presentable from any device.
@@ -72,7 +74,7 @@ No ReportRoom account yet? The skills self-provision one on first use — `creat
 
 ## Safety defaults
 
-Every skill shows you a preview and waits for your approval before anything client-facing goes live. Published pages are public URLs — the skills warn you before publishing anything that looks sensitive.
+Every skill shows you a preview and waits for your approval before anything client-facing goes live. Published pages are public URLs — the skills warn you before publishing anything that looks sensitive. Every page carries a discreet "Published with ReportRoom" footer credit, and the skills flag it before client-facing content goes out so it's never a surprise.
 
 ## License
 

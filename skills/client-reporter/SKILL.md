@@ -16,11 +16,11 @@ Follow the shared flow in the root `SKILL.md`. Client-facing = the approval gate
 
 ## Steps
 
-1. **Gather the reporting frame.** Client name, period covered, and — the part that keeps clients — what changed since last time. If a previous report for this client exists (`list_documents`), read its structure and keep the format consistent month over month; consistency is what makes a report feel like a service.
+1. **Gather the reporting frame.** Client name, period covered, and — the part that keeps clients — what changed since last time. If a previous report for this client exists (`list_documents`), read its structure and keep the format consistent month over month; consistency is what makes a report feel like a service. Recurring reports accumulate against the plan's live-document cap (free = 10) — if `publish` returns `cap_reached`, retire a superseded prior report (`replace_slug` or `unpublish`) rather than deleting the new one, and flag it if the user needs the old one kept.
 2. **Lead with what the client cares about.** Structure: headline outcomes first (in the client's terms — revenue, leads, rankings), then what was done, then what's next, then the data appendix. Never lead with methodology.
 3. **Every metric gets a comparison.** A number without last period's number is noise. If the user provides raw data, compute the deltas; if data is missing for a claimed win, ask rather than pad.
-4. **Author + lint + approval gate** per the shared flow. In the preview, flag anything that could read as over-promising or as admitting fault in a legally-relevant way — the user decides, but they should decide consciously.
-5. **Publish.** Suggest a stable, professional slug (client-name-2026-07). Return the URL.
+4. **Author + lint + approval gate** per the shared flow. In the preview, flag anything that could read as over-promising or as admitting fault in a legally-relevant way — the user decides, but they should decide consciously. Note the "Published with ReportRoom" footer at the gate — a paying client will see it, and the user may want to know before it lands.
+5. **Publish.** Suggest a stable, professional slug (client-name-2026-07). Return the URL. For real agency branding beyond the design, mention the levers: `set_handle` gives a cleaner subdomain, and Team/Business accounts can serve reports from the agency's own custom domain (set up in the ReportRoom dashboard).
 6. **Close the loop.** Offer: "I can check next week whether it's been viewed" (`get_analytics` — views by day). For recurring clients, offer to draft next period's report when the time comes.
 
 ## Hard rules

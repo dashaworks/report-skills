@@ -12,7 +12,7 @@
       "name": "report-skills",
       "source": "./",
       "description": "Bundle of 5 report and deck publishing skills for Claude Code and Codex: report-publisher (research → live tracked report), client-reporter (recurring branded client deliverables), proposal-tracker (view-tracked proposal links), deck-publisher (content → responsive slide deck), report-designer (design-bar polish pass). Powered by the ReportRoom MCP: design system fetch, HTML authoring, lint, one-call publish, view analytics.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Dasha Bulaeva",
         "url": "https://github.com/dashaworks"

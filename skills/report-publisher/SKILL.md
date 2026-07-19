@@ -17,7 +17,7 @@ Follow the shared flow in the root `SKILL.md` (access check → `get_design_syst
 
 ## Steps
 
-1. **Scope the content.** Confirm what goes in (the whole conversation output? just the final analysis?) and the audience (colleague, community, public). Audience decides tone of the framing, not the facts.
+1. **Scope the content.** Confirm what goes in (the whole conversation output? just the final analysis?) and the audience (colleague, community, public). Audience decides tone of the framing, not the facts. If it's for the team rather than the world and the user is in a team workspace (`account_status` → `org_kind: team`), publish with `visibility: "team"` so only signed-in org members can view it.
 2. **Structure for the web, don't paste.** Reshape chat-formatted output into a real document: a title that states the finding, an executive summary up top, sections with descriptive headings, data moved into tables/charts where the design system provides them, sources/appendix at the end. Cut conversational scaffolding ("as we discussed above…").
 3. **Author + lint + approval gate** per the shared flow. In the preview, include your suggested title — titles that state the conclusion travel better than topic labels ("X is 30% cheaper than Y at scale", not "X vs Y comparison").
 4. **Publish and hand over the URL.** Mention the page is tracked: "ask me later how it's doing" (`get_analytics`).

@@ -36,3 +36,4 @@ Work through these in order; each is a check, not an automatic rewrite:
 
 - Never change words, numbers, or ordering of arguments — design pass means design only. If the *content* needs work, say so separately.
 - Don't fight the design system with custom overrides; if it can't express something, simplify the element rather than hacking around it.
+- The "Published with ReportRoom" footer credit is added by ReportRoom at publish and is part of every page by design — don't try to hide, restyle, or override it as part of a polish pass.
