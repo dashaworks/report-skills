@@ -53,6 +53,14 @@ codex plugin marketplace add dashaworks/report-skills
 codex plugin add report-skills@report-skills
 ```
 
+### skills CLI ([skills.sh](https://www.skills.sh))
+
+Install the five skills into any agent that reads `SKILL.md` (Claude Code, Codex, and others) with Vercel's `skills` CLI:
+
+```bash
+npx skills add https://github.com/dashaworks/report-skills/tree/main/skills
+```
+
 ## How it works
 
 The skills publish through the **ReportRoom MCP server** — an agent-native publishing API (one call → live, tracked URL on your domain):
