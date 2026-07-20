@@ -26,8 +26,24 @@ Beyond the core flow, the ReportRoom MCP exposes:
 - **`list_documents`** — the account's live documents, most recent first. Use to keep recurring reports consistent, find a slug to update, or show what's using up the plan's slots.
 - **`unpublish` / `republish`** — retire a live document (its URL returns 410 Gone, the plan slot frees up) or bring it back. Both idempotent. Use for expired proposals, superseded client reports, or freeing a slot at the cap.
 - **`set_handle`** — rename the publishing subdomain (`<handle>.reportroom.io/<slug>`); existing docs move and old links redirect. This is the lightweight branding lever for everyone.
-- **Custom domains** — Team/Business accounts can serve documents from their own domain; `account_status` and `list_documents` report the active custom domain when one is set. This is the real "branded page" for agencies — mention it when a user wants their own domain, but domain setup happens in the ReportRoom dashboard, not through these skills.
+- **`attach_domain`** — attach a custom domain (Team/Business). Returns the DNS records the human must create at their registrar (a CNAME plus ownership/certificate TXT records) and streams progress as provisioning advances. Certificate issuance only completes *after* they add the records, so hand the records over and tell them to come back — don't wait on it. `account_status` and `list_documents` report the active custom domain once live. This is the real "branded page" lever for agencies.
 - **Team workspaces** — `account_status` returns `org_kind` (`personal`/`team`) and the caller's `role`. In a team workspace, `visibility: "team"` on `publish` makes a document viewable only by signed-in org members (Team/Business plans); **viewers cannot publish** and will get a `FORBIDDEN`.
+
+## Data rooms (Business plan only)
+
+When the user needs **access control and per-person tracking** — a fundraise, a diligence process, a gated proposal — a data room beats a published document. A room is a named, access-controlled bundle of documents at one URL, shared with *identified* viewers.
+
+**Gate:** Business plan only (not Free/Pro/Team) **and** the caller must be the org owner or an admin. Anything else returns a clear error — relay it and offer the plain-document path instead of retrying. Limits: **10 live rooms per org, 200 viewers per room.**
+
+**The flow, in order:**
+1. `create_data_room` — name it, pick `access_mode` (`public` | `email` (magic-link, the default) | `passcode` | `allowlist`), and optionally `settings`: `nda_text`, `expires_at`, `allow_download`, `watermark`.
+2. `add_documents_to_room` — pass `document_ids` **in display order**. This *replaces* the whole set, so send the full ordered list every time. Documents stay first-class and standalone; adding one never unpublishes or moves it.
+3. `set_room_access` — change access mode, rotate the passcode (string sets, `null` clears), or update NDA/expiry/download/watermark later.
+4. `grant_room_access` — per viewer, by email. **Returns a single-use invite link once and does not email it.** Hand it to the user to send; it is never retrievable again (only a hash is stored), so if it's lost, re-grant to reissue. Never send it to the recipient yourself without the user's explicit go-ahead.
+5. `list_room_viewers` — the roster with verification/NDA/revocation state. Never exposes invite tokens.
+6. `revoke_room_access` — instantly ends that viewer's sessions.
+
+**`get_room_analytics` is different from `get_analytics`.** It returns **per-viewer, per-document** opens, total events, and dwell — so you can say "the lead spent time on pricing and skipped the deck" and suggest a follow-up. Published documents outside a room remain **aggregate** view counts only. Don't mix the two up when telling the user what you can see.
 
 ## Safety rules (all skills, non-negotiable)
 
